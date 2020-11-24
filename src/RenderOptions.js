@@ -1,5 +1,4 @@
 import React from 'react';
-import RenderFeatures from './RenderFeatures';
 
 function RenderOptions(props){
     return (

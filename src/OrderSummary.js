@@ -2,11 +2,6 @@ import React from 'react';
 import Total from './Total';
 import PartsSummary from './PartsSummary';
 
-const USCurrencyFormat = new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD'
-});
-
 function OrderSummary(props){
     return(
         <section className="main__summary">
