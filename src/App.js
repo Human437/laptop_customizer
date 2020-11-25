@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 // import slugify from 'slugify';
 
 import './App.css';
-import OrderSummary from './OrderSummary';
+// import OrderSummary from './OrderSummary';
 import SelectFeature from './SelectFeatures';
-// import Total from './Total'
+import Total from './Total'
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -53,8 +53,8 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <SelectFeature features = {this.props.features} selected = {this.state.selected} updateFeature = {this.updateFeature}/>
-          <OrderSummary selectedParts = {this.state.selected}/>
+          <SelectFeature selected = {this.state.selected} updateFeature = {this.updateFeature}/>
+          <Total selectedParts = {this.state.selected}/>
         </main>
       </div>
     );
