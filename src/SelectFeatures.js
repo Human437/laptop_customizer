@@ -3,18 +3,19 @@ import slugify from 'slugify';
 import RenderFeatures from './RenderFeatures';
 import RenderOptions from './RenderOptions';
 import EachOption from './EachOption';
+import FEATURES from './FEATURES';
 
 function SelectFeatures(props){
-    const features = Object.keys(props.features).map((feature, idx) => {
+    const features = Object.keys(FEATURES).map((feature, idx) => {
         const featureHash = feature + '-' + idx;
-        const options = props.features[feature].map(item => {
+        const options = FEATURES[feature].map((item,i) => {
           const itemHash = slugify(JSON.stringify(item));
           return (
-            <EachOption itemHash = {itemHash} feature = {feature} item = {item} updateFeature = {props.updateFeature} selected = {props.selected}/>
+            <EachOption key = {i} itemHash = {itemHash} feature = {feature} item = {item} updateFeature = {props.updateFeature} selected = {props.selected}/>
           );
         });
         return(
-            <RenderOptions featureHash = {featureHash} feature = {feature} options = {options}/>
+            <RenderOptions key = {idx} featureHash = {featureHash} feature = {feature} options = {options}/>
         )
         
     });
